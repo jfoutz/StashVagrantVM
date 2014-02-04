@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-
 	config.vm.box = "cent64-puppet"
 	config.vm.provision "shell", path: "script.sh"
+    config.vm.network "forwarded_port", guest: 7990, host: 8080
 end
